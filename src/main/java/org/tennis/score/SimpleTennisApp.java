@@ -7,7 +7,6 @@ public class SimpleTennisApp {
     private static final List<Integer> SCORES = List.of(0, 15, 30, 40);
     private static final int THRESHOLD = 4;
     private static final int MIN_DIFF_TO_WIN = 2;
-
     public void validateString(String scoreString) {
         if (!Pattern.matches("[AB]+", scoreString)) {
             throw new IllegalArgumentException("The game is only between A & B");
@@ -37,7 +36,6 @@ public class SimpleTennisApp {
             System.out.printf("Player A : %s | Player B : %s\n", getScore(pointsForA), getScore(pointsForB));
         }
     }
-
 
     public int getScore(int points) {
         if (points >= SCORES.size()) {
