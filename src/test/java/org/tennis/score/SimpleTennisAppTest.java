@@ -93,7 +93,7 @@ class SimpleTennisAppTest {
 
     @Test
     void testLongGame() {
-        simpleTennisApp.printGame("ABABABABABABABABABABAA");
+        simpleTennisApp.printGame("ABABABABABABABABABABBB");
         String expectedOutput = """
                 Player A : 15 | Player B : 0
                 Player A : 15 | Player B : 15
@@ -101,22 +101,22 @@ class SimpleTennisAppTest {
                 Player A : 30 | Player B : 30
                 Player A : 40 | Player B : 30
                 Deuce
+                Advantage player A
                 Deuce
+                Advantage player A
                 Deuce
+                Advantage player A
                 Deuce
+                Advantage player A
                 Deuce
+                Advantage player A
                 Deuce
+                Advantage player A
                 Deuce
+                Advantage player A
                 Deuce
-                Deuce
-                Deuce
-                Deuce
-                Deuce
-                Deuce
-                Deuce
-                Deuce
-                Deuce
-                Player A wins the game
+                Advantage player B
+                Player B wins the game
                 """;
         String actualOutput = systemOutContent.toString();
         assertPrint(expectedOutput, actualOutput);

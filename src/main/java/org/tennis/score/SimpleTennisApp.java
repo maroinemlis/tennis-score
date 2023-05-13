@@ -17,19 +17,26 @@ public class SimpleTennisApp {
                 case 'A' -> pointsForA++;
                 case 'B' -> pointsForB++;
             }
+            int diffAB = pointsForA - pointsForB;
             // Player A wins
-            if (pointsForA >= MINIMUM_POINTS_TO_WIN && pointsForA - pointsForB >= MINIMUM_POINT_DIFFERENCE_TO_WIN) {
+            if (pointsForA >= MINIMUM_POINTS_TO_WIN && diffAB >= MINIMUM_POINT_DIFFERENCE_TO_WIN) {
                 System.out.print("Player A wins the game\n");
                 break;
             }
             // Player B wins
-            else if (pointsForB >= MINIMUM_POINTS_TO_WIN && pointsForB - pointsForA >= MINIMUM_POINT_DIFFERENCE_TO_WIN) {
+            else if (pointsForB >= MINIMUM_POINTS_TO_WIN && -diffAB >= MINIMUM_POINT_DIFFERENCE_TO_WIN) {
                 System.out.print("Player B wins the game\n");
                 break;
             }
             // Print current score
             else if (pointsForA > MINIMUM_POINT_DIFFERENCE_TO_WIN && pointsForB > MINIMUM_POINT_DIFFERENCE_TO_WIN) {
-                System.out.print("Deuce\n");
+                if (diffAB == 1) {
+                    System.out.print("Advantage player A\n");
+                } else if (diffAB == -1) {
+                    System.out.print("Advantage player B\n");
+                } else {
+                    System.out.print("Deuce\n");
+                }
             } else {
                 System.out.printf("Player A : %s | Player B : %s\n", getScore(pointsForA), getScore(pointsForB));
             }
